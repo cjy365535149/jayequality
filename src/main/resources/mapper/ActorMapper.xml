@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="pers.jay.equality.mapper.ActorMapper">
+    <resultMap id="BaseResultMap" type="pers.jay.equality.pojo.Actor" >
+        <result column="actor_id" property="actorId" />
+        <result column="first_name" property="firstName" />
+        <result column="last_name" property="lastName" />
+    </resultMap>
+    <select id="findByActorId" resultMap="BaseResultMap">
+        select actor_id, first_name, last_name from actor where actor_id = #{actorId}
+    </select>
+    <select id="findAll" resultMap="BaseResultMap">
+        select actor_id, first_name, last_name from actor
+    </select>
+</mapper>
